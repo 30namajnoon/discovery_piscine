@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        let circulos = [];
+        let colors = ["#00ffff","#36d60e","#d45d18","#1866d4","#a256bd"]
+        let canvas = document.createElement("canvas");
+        canvas.width = innerWidth ;
+        canvas.height = innerHeight ;
+        document.body.appendChild(canvas);
+        let ctx = canvas.getContext("2d");
+        
+        function Circulo(x,y,w,h,color,sx,sy) {
+            this.x = x;
+            this.y = y;
+            this.w = w;
+            this.h = h;
+            this.sx = sx;
+            this.sy = sy
+            this.color = color;
+        }
+        Circulo.prototype.draw = function() {
+            ctx.beginPath();
+            ctx.strokeStyle = "#ffffff";
+            ctx.fillStyle = this.color;
+            ctx.arc(this.x,this.y,this.w/2, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+        Circulo.prototype.update = function() {
+            this.x += this.sx;
+            this.y += this.sy;
+            if(this.x < 0) this.sx = Math.abs(this.sx);
+            if(this.x + this.w > innerWidth) this.sx *= -1;
+            if(this.y < 0) this.sy = Math.abs(this.sy);
+            if(this.y + this.w > innerHeight) this.sy *= -1;
+
+            circulos.forEach(c => {
+                
+                let x1 = this.x + (this.w/2);
+                let y1 = this.y + (this.w/2);
+                let x2 = c.x + (this.w/2);
+                let y2 = c.y + (this.w/2);
+                let distancia = Math.sqrt((x1 - x2)**2 + (y1 - y2)**2);
+               
+            })
+            
+        }
+
+        function anim() {
+            requestAnimationFrame(anim);
+            ctx.clearRect(0,0,innerWidth,innerHeight);
+            if(circulos.length > 0) {
+                circulos.forEach(c => {
+                    c.draw();
+                    c.update();
+                })
+            }
+
+        }
+        anim();
+
+        window.addEventListener("click",(e) => {
+            let ss = [-5,5];
+            let sx = ss[Math.floor(Math.random()*2)];
+            let sy = ss[Math.floor(Math.random()*2)];
+            let color = colors[Math.floor(Math.random()*5)];
+            circulos.push(new Circulo(e.pageX,e.pageY,50,50,color,sx,sy));
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container.image1 {
+  background-image: url(https://cdn.wallpapersafari.com/75/71/RPYvQr.jpg);
+}
+.container.image2 {
+  background-image: url(https://www.wallpapertip.com/wmimgs/49-492847_blue-eyed-cat-wallpaper-data-src-blue-eyes.jpg);
+}
+
+.container h1 {
+  color: rgb(0, 0, 0);
+  font-size: 3vw;
+  font-weight: 400;
+  
+}
+
+.container.center {
+  height: 50vh;
+  
+}
+.container.center h1 {
+  color: white;
+}
