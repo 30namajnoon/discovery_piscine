@@ -5,6 +5,17 @@ body {
 .cv_container {
     width: 100vw;
 }
+.cv_container input {
+    width: 10vw;
+    position: fixed;
+    margin: 1vw;
+    background-color: rgba(240, 248, 255, 0.491);
+    border: 0;
+    padding: .5vw;
+    border-radius: .5vw;
+    box-shadow: 1px 1px 5px gray;
+    color: white;
+}
 
 .cvInicio_container {
     width: 100vw;

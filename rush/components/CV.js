@@ -11,6 +11,10 @@ CV.prototype.set = function() {
     this.cvSelectadoData = appContext.get("getCVSelectado")();
     this.navegacion = new Navegacion(this.cvSelectadoData.navegacion);
     this.container = createElement(appContext.get("container"),{tagName:"div",className:"cv_container"});
+    this.inicioButton = createElement(this.container,{tagName:"input",type:"button",value:"INICIO"})
+    this.inicioButton.addEventListener("click",()=> {
+        appContext.get("setPage")("inicio");
+    })
     this.inicio = new CVInicio(this.container,this.cvSelectadoData.inicio);
     this.sobreMi = new CVSobreMi(this.container,this.cvSelectadoData.sobreMi);
     this.contact = new CVContact(this.container,this.cvSelectadoData.contact);
