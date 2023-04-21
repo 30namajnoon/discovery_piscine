@@ -6,5 +6,5 @@ export default function Link(container,data) {
         appContext.get("setCVSelectado")(data.id);
         appContext.get("setPage")("cv");
     })
-    this.button.click()
+   
 }

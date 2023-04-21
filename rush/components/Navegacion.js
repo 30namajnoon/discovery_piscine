@@ -5,8 +5,9 @@ function Icon(container,data) {
     this.name = data.name;
     this.icon = createElement(container,{tagName:"span",className:"material-symbols-rounded",innerHtml:data.icon});
     this.icon.addEventListener("click",()=> {
-        let p = document.getElementById(this.name).getBoundingClientRect(); 
-        window.scroll({top:p.top,left:p.left,behavior:"smooth"});
+        let c = document.getElementById(this.name); 
+        c.scrollIntoView({behavior: "smooth"});
+       
     })
 }
 

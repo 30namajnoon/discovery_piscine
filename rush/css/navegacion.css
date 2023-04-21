@@ -18,7 +18,7 @@
     border-radius: 5vw;
     color: gray;
     transition: all 0.5s;
-    box-shadow: 1.5px 1.5px 5px gray;
+    box-shadow: 1.5px 1.5px 5px rgb(9, 9, 9);
     cursor: pointer;
     margin: 2vw;
 }

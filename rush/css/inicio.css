@@ -24,16 +24,22 @@
     background-size: cover;
 }
 .links_container input {
-    width: 8vw;
-    height: 2.5vw;
+    width: 15vw;
+   
     margin: 1vw;
     background-color: rgba(65, 97, 125, 0.364);
     border: solid 0.5px gray;
     border-radius: .2vw;
     color: white;
+    font-size: 1.5vw;
+    padding: 1vw;
 }
 .inicio_titulo {
     color: white;
-    font-size: 3vw;
+    font-size: 5vw;
     margin: 5vw;
+    width: 100%;
+    padding: 1vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.287);
 }
